@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="normalise.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Sumit Kumar | AI Developer Portfolio</title>
+    <meta name="description" content="Sumit Kumar - frontend developer building AI-powered web experiences.">
+    <meta name="google-site-verification" content="LgUToFPO_ZprD2Rgnchizs1Iua0qT5BvDxci3A-EAaA">
+</head>
+<body>
+    <div class="bg-orb orb-one"></div>
+    <div class="bg-orb orb-two"></div>
+
+    <nav class="navBar">
+        <a href="#home" class="brand">SUMIT KUMAR</a>
+        <div class="navRight">
+            <a href="#about" class="navLink">About</a>
+            <a href="#skills" class="navLink">Skills</a>
+            <a href="#projects" class="navLink">Projects</a>
+            <a href="#aibot" class="navLink">AI Bot</a>
+            <a href="#contact" class="navLink">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-left reveal">
+            <p class="eyebrow">PORTFOLIO </p>
+            <h1>
+                Building fast websites
+                <span>with AI-first thinking.</span>
+            </h1>
+            <p class="text hero-copy">
+                I am Sumit Kumar, a frontend developer and B.Tech (IT) student (AKTU, 2027) crafting responsive products with clean UI, APIs, and automation workflows.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="resume.png" target="_blank" class="btn btn-ghost" rel="noopener">Resume</a>
+            </div>
+        </div>
+        <div class="hero-right reveal delay-1">
+            <div class="profile-card">
+                <img src="front.jpeg" alt="Sumit Kumar" class="circular-image">
+                <p class="profile-title">SUMIT KUMAR</p>
+                <p class="profile-subtitle">Frontend + AI Integration</p>
+                <div class="mini-stats">
+                    <span>HTML/CSS/JS</span>
+                    <span>API Integration</span>
+                    <span>GitHub Workflow</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section reveal" id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="text">
+           Passionate frontend developer focused on creating high-performance, scalable, and visually engaging web applications. 
+           I leverage modern technologies and AI tools to build smarter and faster digital Still Learning.
+
+        </p>
+    </section>
+
+    <section class="section reveal" id="skills">
+        <h2 class="section-title">Skills Stack</h2>
+        <div class="skills-grid">
+            <img src="python.png" class="skills" alt="Python">
+            <img src="c.png" class="skills" alt="C">
+            <img src="html.png" class="skills" alt="HTML">
+            <img src="css.png" class="skills" alt="CSS">
+            <img src="js.png" class="skills" alt="JavaScript">
+            <img src="git.png" class="skills" alt="Git">
+            <img src="github.png" class="skills" alt="GitHub">
+            <img src="sql.png" class="skills" alt="SQL">
+            <img src="netlify.png" class="skills" alt="Netlify">
+            <img src="versek.png" class="skills" alt="Vercel">
+        </div>
+    </section>
+
+    <section class="section reveal" id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects">
+            <article class="project">
+                <a target="_blank" href="https://rajshree-institute-bareilly.netlify.app/" rel="noopener">
+                    <img src="clg.png" alt="Rajshree Institute website project">
+                </a>
+                <h3>College Website</h3>
+                <p class="text">Responsive institutional website with clean layout and clear content flow.</p>
+            </article>
+            <article class="project">
+                <a target="_blank" href="https://countryfinder.edgeone.dev/" rel="noopener">
+                    <img src="country.png" alt="Country Finder project">
+                </a>
+                <h3>Country Finder</h3>
+                <p class="text">API-powered project for searching country insights and location data quickly.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="section reveal" id="aibot">
+           <h2 class="section-title">
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Trip Gallery</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            margin: 0;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        .navBar {
+            padding: 20px;
+            background: #020617;
+            font-size: 20px;
+        }
+
+        .section {
+            padding: 50px 20px;
+        }
+
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        /* ===== TRIP GALLERY ===== */
+        .trip-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .trip-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .trip-card img {
+            width: 60%;
+            height: 200px;
+            object-fit: cover;
+            object-position: top;
+            
+        }
+
+        .trip-card p {
+            padding: 10px;
+        }
+
+        .trip-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navBar">
+        🌍 My Trip Gallery
+    </div>
+
+    <!-- TRIP GALLERY -->
+    <section class="section">
+        <h2 class="section-title">My Travel Memories 📸</h2>
+
+        <div class="trip-gallery">
+            <div class="trip-card">
+                <img src="haridwar.jpeg">
+                <p>Haridwar</p>
+            </div>
+
+            <div class="trip-card">
+                <img src="masoorie.jpeg">
+                <p>massoorie</p>
+            </div>
+
+            <div class="trip-card">
+                <img src="nainital .jpeg">
+                <p>Nainital</p>
+            </div>
+
+            <div class="trip-card">
+                <img src="ramnagar.jpeg">
+                <p>Ramnagar</p>
+            </div> 
+            <div class="trip-card">
+                <img src="landour.jpeg">
+                <p>Landour</p>
+            </div>
+            <div class="trip-card">
+                <img src="uttrakhand.jpeg">
+                <p>😊😘💁</p>
+            </div>
+            <div class="trip-card">
+                <img src="college.jpeg">
+                <p>College</p>
+            </div>
+            <div class="trip-card">
+                <img src="almora.jpeg">
+                <p>Almora</p>
+            </div>
+            
+        </div>
+    </section>
+
+  <img src="bot.gif" style="width:60px; height:auto;">
+</h2>
+        <p class="text">Try asking about my skills, projects, contact, or resume.</p>
+        <div class="bot-shell">
+            <div id="botMessages" class="bot-messages">
+                <p class="bot-msg">Bot: Hi! I am Sumit's portfolio assistant. Ask me anything.</p>
+            </div>
+            <form id="botForm" class="bot-form">
+                <input id="botInput" type="text" placeholder="Type your question..." aria-label="Ask AI bot">
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="section reveal" id="contact">
+        <div class="contact-layout">
+            <div class="profileTwo">
+                <img src="contant.jpeg" alt="Sumit portrait">
+            </div>
+            <div class="contactForm">
+                <h2 class="section-title">Contact Me</h2>
+                <form action="https://formspree.io/f/xqarvzko" method="post">
+                    <input type="text" placeholder="Name" name="name" required>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="text" placeholder="Subject" name="subject" required>
+                    <textarea placeholder="Message" rows="5" name="message" required></textarea>
+                    <button type="submit" class="btn btn-primary submitForm">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <ul class="contact">
+        <li><a href="https://www.instagram.com/official_sumit_k?igsh=MXRvMjBkNDJ6bXdudA==" target="_blank" rel="noopener" title="Instagram"><img class="icons" src="insta.svg" alt="Instagram"></a></li>
+        <li><a href="https://x.com/rimt789?t=3u1dpzIRFSx4JpcoghEs_Q&s=09" target="_blank" rel="noopener" title="Twitter"><img class="icons" src="twitter-light.svg" alt="Twitter"></a></li>
+        <li><a href="https://www.linkedin.com/in/sumit-kumar-6442b8351?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" title="LinkedIn"><img class="icons" src="linkedIn.svg" alt="LinkedIn"></a></li>
+        <li><a href="https://github.com/Sumituk06" target="_blank" rel="noopener" title="GitHub"><img class="icons" src="github.svg" alt="GitHub"></a></li>
+        <li><a href="mailto:work.sumitkumar47213@gmail.com" title="Email"><img class="icons" src="mail.svg" alt="Email"></a></li>
+    </ul>
+
+    <p class="copyright"> Sumit Kumar</p>
+
+    <button class="top" id="topButton" aria-label="Scroll to top">
+        <img src="arrow.svg" alt="Top arrow">
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
