@@ -66,3 +66,34 @@ if (botForm && botInput) {
         botInput.value = '';
     });
 }
+.html{
+
+    width:90%;
+
+}
+
+.css{
+
+    width:85%;
+
+}
+
+.js{
+
+    width:80%;
+
+}
+
+.git{
+
+    width:75%;
+
+}
+
+.frontend{
+
+    width:88%;
+
+}
+
+</style>
