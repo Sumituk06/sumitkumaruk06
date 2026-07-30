@@ -206,67 +206,7 @@ async function askGemini(userInput, apiKey) {
     }
 }
 
-// Floating Chat Panel toggles
-const botPanel = document.getElementById('aibotPanel');
-const botToggleButton = document.getElementById('botToggleButton');
-const botCloseButton = document.getElementById('botCloseButton');
-const openChatbotBtn = document.getElementById('openChatbotBtn');
-const navBotLink = document.querySelector('a[href="#aibot"]');
 
-function toggleBot() {
-    if (botPanel) {
-        botPanel.classList.toggle('active');
-        if (botPanel.classList.contains('active')) {
-            setTimeout(() => {
-                if (botInput) botInput.focus();
-            }, 100);
-        }
-    }
-}
-
-if (botToggleButton) {
-    botToggleButton.addEventListener('click', toggleBot);
-}
-
-if (botCloseButton) {
-    botCloseButton.addEventListener('click', () => {
-        if (botPanel) botPanel.classList.remove('active');
-    });
-}
-
-if (openChatbotBtn) {
-    openChatbotBtn.addEventListener('click', () => {
-        if (botPanel) {
-            botPanel.classList.add('active');
-            setTimeout(() => {
-                if (botInput) botInput.focus();
-            }, 100);
-        }
-    });
-}
-
-if (navBotLink) {
-    navBotLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (botPanel) {
-            botPanel.classList.add('active');
-            setTimeout(() => {
-                if (botInput) botInput.focus();
-            }, 100);
-        }
-    });
-}
-
-// Update status indicator based on API Key presence
-const botStatusText = document.getElementById('botStatusText');
-const statusDot = document.querySelector('.bot-panel .status-dot');
-if (GEMINI_API_KEY) {
-    if (botStatusText) botStatusText.textContent = 'Online';
-    if (statusDot) statusDot.classList.add('online');
-} else {
-    if (botStatusText) botStatusText.textContent = 'Offline / Demo';
-    if (statusDot) statusDot.classList.remove('online');
-}
 
 // Function to auto-scroll to the matched section
 function autoScrollToSection(userInput) {

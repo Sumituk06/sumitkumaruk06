@@ -488,7 +488,7 @@ textarea:focus {
 .top {
     position: fixed;
     right: 1.6rem;
-    bottom: 7.6rem;
+    bottom: 1.6rem;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -497,7 +497,6 @@ textarea:focus {
     padding: 0;
     cursor: pointer;
     display: none;
-    z-index: 99;
 }
 
 .top img {
@@ -1037,184 +1036,6 @@ textarea:focus {
     color: var(--text-muted);
 }
 
-/* ===== FLOATING CHATBOT WIDGET STYLING ===== */
-.bot-panel {
-    position: fixed;
-    right: 1.6rem;
-    bottom: 7.6rem;
-    width: 380px;
-    max-width: calc(100vw - 3.2rem);
-    height: 480px;
-    z-index: 1000;
-    background: rgba(6, 20, 34, 0.96);
-    border: 1px solid rgba(19, 224, 209, 0.35);
-    border-radius: 1.6rem;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(12px);
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-    animation: slideUp 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.bot-panel.active {
-    display: flex;
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-.bot-panel .bot-header {
-    background: rgba(12, 35, 58, 0.9);
-    padding: 1rem 1.4rem;
-    border-bottom: 1px solid rgba(19, 224, 209, 0.2);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.bot-header-left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.bot-panel .bot-logo-img {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1.5px solid var(--accent);
-    box-shadow: 0 0 8px rgba(19, 224, 209, 0.3);
-    margin-right: 0;
-}
-
-.bot-header-left h3 {
-    font-size: 1.5rem;
-    margin: 0;
-    color: #fff;
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: 0.05rem;
-}
-
-.bot-panel .bot-status-indicator {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 1.1rem;
-    color: var(--text-muted);
-}
-
-.bot-panel .status-dot {
-    width: 7px;
-    height: 7px;
-    background-color: #ff9800; /* Orange default */
-    border-radius: 50%;
-    box-shadow: 0 0 6px #ff9800;
-}
-
-.bot-panel .status-dot.online {
-    background-color: #4caf50; /* Green online */
-    box-shadow: 0 0 6px #4caf50;
-}
-
-.bot-close-btn {
-    background: transparent;
-    border: none;
-    color: var(--text-muted);
-    font-size: 2.2rem;
-    cursor: pointer;
-    line-height: 1;
-    padding: 0.2rem;
-    transition: color 0.2s ease;
-}
-
-.bot-close-btn:hover {
-    color: var(--accent);
-}
-
-.bot-panel .bot-shell {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    overflow: hidden;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    margin-top: 0;
-}
-
-.bot-panel .bot-messages {
-    flex: 1;
-    min-height: 0;
-    max-height: none;
-    margin-bottom: 1rem;
-    overflow-y: auto;
-}
-
-/* Floating AI Toggle Button */
-.bot-toggle {
-    position: fixed;
-    right: 1.6rem;
-    bottom: 1.6rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 1px solid rgba(19, 224, 209, 0.4);
-    background: rgba(3, 14, 26, 0.85);
-    padding: 0;
-    cursor: pointer;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(19, 224, 209, 0.2);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.bot-toggle:hover {
-    transform: scale(1.1);
-    border-color: var(--accent);
-    box-shadow: 0 6px 20px rgba(19, 224, 209, 0.45);
-}
-
-.bot-toggle-img {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.bot-toggle-pulse {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 2px solid var(--accent);
-    animation: botPulse 2s infinite;
-    opacity: 0;
-    pointer-events: none;
-}
-
-@keyframes botPulse {
-    0% {
-        transform: scale(1);
-        opacity: 0.6;
-    }
-    100% {
-        transform: scale(1.4);
-        opacity: 0;
-    }
-}
-
 /* Highlight section animation */
 @keyframes highlightBorder {
     0% {
@@ -1232,16 +1053,4 @@ textarea:focus {
 .highlight-section-temp {
     animation: highlightBorder 2.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-/* Responsive adjustment for Mobile Chat panel */
-@media (max-width: 480px) {
-    .bot-panel {
-        right: 1rem;
-        left: 1rem;
-        width: auto;
-        max-width: none;
-        height: 80vh;
-        bottom: 7.6rem;
-    }
 }

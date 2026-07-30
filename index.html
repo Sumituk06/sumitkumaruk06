@@ -249,11 +249,22 @@
     </section>
 
     <section class="section reveal" id="aibot">
-        <h2 class="section-title">AI Assistant</h2>
-        <p class="text" style="margin-bottom: 2rem; text-align: center;">Have questions about Sumit's skills, projects,
-            or education? Ask his interactive AI assistant!</p>
-        <div style="text-align: center;">
-            <button class="btn btn-primary" id="openChatbotBtn">Chat with AI</button>
+        <div class="bot-header">
+            <h2 class="section-title">
+                <img src="bot.gif" alt="AI Bot Logo" class="bot-logo-img">
+                AI Portfolio Assistant
+            </h2>
+        </div>
+        <p class="text">Ask me about Sumit's skills, projects, contact, or education.</p>
+        <div class="bot-shell">
+            <div id="botMessages" class="bot-messages">
+                <div class="bot-msg"><strong>Bot:</strong> Hi! I am Sumit's portfolio assistant. Ask me anything about
+                    his skills, projects, or education.</div>
+            </div>
+            <form id="botForm" class="bot-form">
+                <input id="botInput" type="text" placeholder="Type your question..." aria-label="Ask AI bot">
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
         </div>
     </section>
 
@@ -292,38 +303,7 @@
 
     <p class="copyright"> Sumit Kumar</p>
 
-    <!-- AI Bot Floating Panel -->
-    <div id="aibotPanel" class="bot-panel">
-        <div class="bot-header">
-            <div class="bot-header-left">
-                <img src="bot.gif" alt="AI Bot Logo" class="bot-logo-img">
-                <div>
-                    <h3>AI Assistant</h3>
-                    <div class="bot-status-indicator">
-                        <span class="status-dot"></span>
-                        <span id="botStatusText">Offline / Demo</span>
-                    </div>
-                </div>
-            </div>
-            <button class="bot-close-btn" id="botCloseButton" aria-label="Close Chat">&times;</button>
-        </div>
-        <div class="bot-shell">
-            <div id="botMessages" class="bot-messages">
-                <div class="bot-msg"><strong>Bot:</strong> Hi! I am Sumit's portfolio assistant. Ask me anything about
-                    his skills, projects, or education.</div>
-            </div>
-            <form id="botForm" class="bot-form">
-                <input id="botInput" type="text" placeholder="Type your question..." aria-label="Ask AI bot">
-                <button type="submit" class="btn btn-primary">Send</button>
-            </form>
-        </div>
-    </div>
 
-    <!-- Floating AI Toggle Button -->
-    <button class="bot-toggle" id="botToggleButton" aria-label="Toggle AI Bot">
-        <img src="bot.gif" alt="AI Bot" class="bot-toggle-img">
-        <span class="bot-toggle-pulse"></span>
-    </button>
 
     <button class="top" id="topButton" aria-label="Scroll to top">
         <img src="arrow.svg" alt="Top arrow">
