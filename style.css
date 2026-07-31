@@ -165,8 +165,100 @@ h1 span {
     max-width: 60ch;
 }
 
+.hero-socials {
+    margin-top: 2.8rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: rgba(9, 27, 45, 0.4);
+}
+
+.social-icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+    transform: scale(1.15);
+}
+
+/* Instagram */
+.social-icon.instagram {
+    border: 1px solid rgba(214, 36, 159, 0.4);
+    box-shadow: 0 0 10px rgba(214, 36, 159, 0.1);
+}
+.social-icon.instagram img {
+    filter: drop-shadow(0 0 1px rgba(214, 36, 159, 0.8));
+}
+.social-icon.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    border-color: transparent;
+    box-shadow: 0 8px 24px rgba(214, 36, 159, 0.6);
+    transform: translateY(-5px) scale(1.1) rotate(8deg);
+}
+
+/* Twitter (X) */
+.social-icon.twitter {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+.social-icon.twitter:hover {
+    background: #000000;
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px) scale(1.1) rotate(-8deg);
+}
+
+/* LinkedIn */
+.social-icon.linkedin {
+    border: 1px solid rgba(0, 119, 181, 0.4);
+    box-shadow: 0 0 10px rgba(0, 119, 181, 0.1);
+}
+.social-icon.linkedin:hover {
+    background: #0077b5;
+    border-color: transparent;
+    box-shadow: 0 8px 24px rgba(0, 119, 181, 0.6);
+    transform: translateY(-5px) scale(1.1) rotate(8deg);
+}
+
+/* GitHub */
+.social-icon.github {
+    border: 1px solid rgba(110, 84, 148, 0.4);
+    box-shadow: 0 0 10px rgba(110, 84, 148, 0.1);
+}
+.social-icon.github:hover {
+    background: #24292e;
+    border-color: transparent;
+    box-shadow: 0 8px 24px rgba(110, 84, 148, 0.6);
+    transform: translateY(-5px) scale(1.1) rotate(-8deg);
+}
+
+/* Mail */
+.social-icon.mail {
+    border: 1px solid rgba(234, 67, 53, 0.4);
+    box-shadow: 0 0 10px rgba(234, 67, 53, 0.1);
+}
+.social-icon.mail:hover {
+    background: #ea4335;
+    border-color: transparent;
+    box-shadow: 0 8px 24px rgba(234, 67, 53, 0.6);
+    transform: translateY(-5px) scale(1.1) rotate(8deg);
+}
+
 .hero-cta {
-    margin-top: 2.6rem;
+    margin-top: 2rem;
     display: flex;
     gap: 1.2rem;
 }
@@ -179,6 +271,19 @@ h1 span {
     cursor: pointer;
     font-size: 2rem;
     font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn:active {
+    transform: translateY(-1px);
 }
 
 .btn-primary {
@@ -187,10 +292,39 @@ h1 span {
     box-shadow: 0 10px 24px rgba(19, 224, 209, 0.3);
 }
 
+.btn-primary:hover {
+    box-shadow: 0 15px 30px rgba(19, 224, 209, 0.5);
+}
+
+.btn-secondary {
+    color: #02131e;
+    background: linear-gradient(110deg, var(--accent-2), #ffa801);
+    box-shadow: 0 10px 24px rgba(255, 200, 87, 0.3);
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 15px 30px rgba(255, 200, 87, 0.5);
+}
+
+.btn-tertiary {
+    color: #02131e;
+    background: linear-gradient(110deg, #b3ff00, #10ac84);
+    box-shadow: 0 10px 24px rgba(179, 255, 0, 0.25);
+}
+
+.btn-tertiary:hover {
+    box-shadow: 0 15px 30px rgba(179, 255, 0, 0.45);
+}
+
 .btn-ghost {
     color: var(--text);
     border: 1px solid var(--border);
     background: rgba(255, 255, 255, 0.03);
+}
+
+.btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent);
 }
 
 .profile-card {
@@ -204,12 +338,68 @@ h1 span {
     -webkit-backdrop-filter: blur(12px);
 }
 
-.circular-image {
+.profile-image-wrapper {
+    position: relative;
     width: 220px;
     height: 220px;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 50%;
+    border: 3px dashed var(--accent);
+    box-shadow: 0 0 15px rgba(19, 224, 209, 0.35);
+    animation: rotateCircle 15s linear infinite;
+}
+
+.profile-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: -14px;
+    left: -14px;
+    right: -14px;
+    bottom: -14px;
+    border-radius: 50%;
+    border: 1px dotted var(--accent-2);
+    animation: rotateCircleReverse 20s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes rotateCircle {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateCircleReverse {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid rgba(218, 246, 255, 0.7);
+    border: 3px solid rgba(218, 246, 255, 0.4);
+    position: relative;
+    z-index: 2;
 }
 
 .profile-title {
@@ -263,8 +453,8 @@ h1 span {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 1.4rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.6rem;
     margin-top: 1.8rem;
 }
 
@@ -272,46 +462,87 @@ h1 span {
     background: rgba(9, 27, 45, 0.4);
     border: 1px solid rgba(133, 178, 207, 0.15);
     border-radius: 1.4rem;
-    padding: 1.4rem 1rem;
+    padding: 1.6rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
+    gap: 1.6rem;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     cursor: pointer;
-    text-align: center;
+    text-align: left;
 }
 
 .skill-card img {
-    width: 42px;
-    height: 42px;
+    width: 45px;
+    height: 45px;
     object-fit: contain;
-}
-
-.skill-card span {
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    transition: color 0.3s ease;
-}
-
-.skill-card small {
-    display: block;
-    font-size: 1rem;
-    color: var(--accent-2);
-    font-weight: 500;
-    margin-top: 0.2rem;
+    flex-shrink: 0;
 }
 
 .skill-custom-icon {
     font-size: 3.4rem;
-    line-height: 42px;
-    height: 42px;
+    line-height: 45px;
+    height: 45px;
+    width: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--accent);
+    flex-shrink: 0;
+}
+
+.skill-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.skill-name small {
+    font-size: 1rem;
+    color: var(--accent-2);
+    font-weight: 500;
+    margin-left: 0.5rem;
+    display: inline-block;
+}
+
+.skill-percentage {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.skill-progress-bg {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-progress-fill {
+    height: 100%;
+    border-radius: 999px;
+    animation: fillProgress 1.5s cubic-bezier(0.1, 1, 0.1, 1) forwards;
+}
+
+@keyframes fillProgress {
+    from {
+        width: 0 !important;
+    }
 }
 
 .skill-card:hover {
@@ -321,8 +552,8 @@ h1 span {
     background: rgba(9, 27, 45, 0.6);
 }
 
-.skill-card:hover span {
-    color: var(--text);
+.skill-card:hover .skill-percentage {
+    color: var(--accent);
 }
 
 .skill-card.highlight {
@@ -332,6 +563,10 @@ h1 span {
 .skill-card.highlight:hover {
     border-color: var(--accent-2);
     box-shadow: 0 8px 24px rgba(255, 200, 87, 0.15);
+}
+
+.skill-card.highlight:hover .skill-percentage {
+    color: var(--accent-2);
 }
 
 .projects {
@@ -1055,4 +1290,9 @@ textarea:focus {
 .highlight-section-temp {
     animation: highlightBorder 2.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #333;
+    color: #fff
 }
