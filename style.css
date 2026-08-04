@@ -200,9 +200,11 @@ h1 span {
     border: 1px solid rgba(214, 36, 159, 0.4);
     box-shadow: 0 0 10px rgba(214, 36, 159, 0.1);
 }
+
 .social-icon.instagram img {
     filter: drop-shadow(0 0 1px rgba(214, 36, 159, 0.8));
 }
+
 .social-icon.instagram:hover {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
     border-color: transparent;
@@ -215,6 +217,7 @@ h1 span {
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
+
 .social-icon.twitter:hover {
     background: #000000;
     border-color: rgba(255, 255, 255, 0.5);
@@ -227,6 +230,7 @@ h1 span {
     border: 1px solid rgba(0, 119, 181, 0.4);
     box-shadow: 0 0 10px rgba(0, 119, 181, 0.1);
 }
+
 .social-icon.linkedin:hover {
     background: #0077b5;
     border-color: transparent;
@@ -239,6 +243,7 @@ h1 span {
     border: 1px solid rgba(110, 84, 148, 0.4);
     box-shadow: 0 0 10px rgba(110, 84, 148, 0.1);
 }
+
 .social-icon.github:hover {
     background: #24292e;
     border-color: transparent;
@@ -251,6 +256,7 @@ h1 span {
     border: 1px solid rgba(234, 67, 53, 0.4);
     box-shadow: 0 0 10px rgba(234, 67, 53, 0.1);
 }
+
 .social-icon.mail:hover {
     background: #ea4335;
     border-color: transparent;
@@ -262,6 +268,7 @@ h1 span {
     margin-top: 2rem;
     display: flex;
     gap: 1.2rem;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -337,6 +344,8 @@ h1 span {
     text-align: center;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    max-width: 420px;
+    margin: 0 auto;
 }
 
 .profile-image-wrapper {
@@ -379,6 +388,7 @@ h1 span {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -388,6 +398,7 @@ h1 span {
     from {
         transform: rotate(360deg);
     }
+
     to {
         transform: rotate(0deg);
     }
@@ -686,9 +697,9 @@ textarea:focus {
     padding: 3.5rem;
     border-radius: 2rem;
     border: 1px solid rgba(19, 224, 209, 0.45);
-    box-shadow: 0 10px 40px rgba(3, 10, 20, 0.6), 
-                0 0 30px rgba(19, 224, 209, 0.15), 
-                inset 0 0 20px rgba(19, 224, 209, 0.05);
+    box-shadow: 0 10px 40px rgba(3, 10, 20, 0.6),
+        0 0 30px rgba(19, 224, 209, 0.15),
+        inset 0 0 20px rgba(19, 224, 209, 0.05);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: all 0.3s ease;
@@ -883,7 +894,7 @@ textarea:focus {
     }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1024px) {
     .hero {
         grid-template-columns: 1fr;
         padding: 4rem 0 3rem;
@@ -896,6 +907,17 @@ textarea:focus {
 
     .profileTwo {
         display: none;
+    }
+
+    .contactForm {
+        max-width: 580px;
+        margin: 0 auto;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+        margin: 2rem auto 0;
     }
 }
 
@@ -1474,7 +1496,7 @@ body.light-mode {
     --accent-2: #c65300;
     --border: rgba(14, 25, 37, 0.12);
     --shadow: 0 10px 25px rgba(14, 25, 37, 0.05);
-    
+
     background: #f3f5f8;
 }
 
@@ -1577,7 +1599,7 @@ body.light-mode .contactForm {
     background: #ffffff;
     border: 1px solid rgba(2, 122, 117, 0.25);
     box-shadow: 0 15px 40px rgba(14, 25, 37, 0.08),
-                0 0 20px rgba(2, 122, 117, 0.03);
+        0 0 20px rgba(2, 122, 117, 0.03);
 }
 
 body.light-mode .contactForm .input-group input,

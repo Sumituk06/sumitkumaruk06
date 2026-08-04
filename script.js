@@ -306,7 +306,7 @@ if (themeToggle) {
     themeToggle.addEventListener('click', () => {
         const isLight = document.body.classList.toggle('light-mode');
         localStorage.setItem('theme', isLight ? 'light' : 'dark');
-        
+
         if (isLight) {
             if (sunIcon) sunIcon.style.display = 'none';
             if (moonIcon) moonIcon.style.display = 'block';
