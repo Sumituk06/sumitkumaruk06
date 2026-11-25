@@ -1,0 +1,177 @@
+/* ==========================================================
+   Modern Color Scheme & Design Tokens
+   Follows modern-web-guidance: color-scheme + light-dark() + fallback
+   ========================================================== */
+
+:root {
+  /* Raw tokens */
+  --bg-light: #f1f5f9;
+  --bg-dark: #040b13;
+  --bg-soft-light: #e2e8f0;
+  --bg-soft-dark: #0a192b;
+
+  --surface-light: rgba(255, 255, 255, 0.86);
+  --surface-dark: rgba(8, 22, 40, 0.72);
+  --surface-strong-light: #ffffff;
+  --surface-strong-dark: #0d2238;
+  --surface-card-light: rgba(255, 255, 255, 0.94);
+  --surface-card-dark: rgba(9, 27, 45, 0.56);
+
+  --text-light: #0d1b2a;
+  --text-dark: #eaf6ff;
+  --text-muted-light: #475569;
+  --text-muted-dark: #9db8cc;
+
+  --accent-light: #027a75;
+  --accent-dark: #13e0d1;
+  --accent-2-light: #c25500;
+  --accent-2-dark: #ffc857;
+
+  --border-light: rgba(15, 23, 42, 0.12);
+  --border-dark: rgba(112, 168, 204, 0.28);
+
+  --shadow-light: 0 18px 45px rgba(15, 23, 42, 0.07);
+  --shadow-dark: 0 22px 55px rgba(2, 8, 18, 0.62);
+
+  /* Fallback default (light) */
+  --bg: var(--bg-light);
+  --bg-soft: var(--bg-soft-light);
+  --surface: var(--surface-light);
+  --surface-strong: var(--surface-strong-light);
+  --surface-card: var(--surface-card-light);
+  --text: var(--text-light);
+  --text-muted: var(--text-muted-light);
+  --accent: var(--accent-light);
+  --accent-2: var(--accent-2-light);
+  --border: var(--border-light);
+  --shadow: var(--shadow-light);
+  --scrollbar-track: #e2e8f0;
+  --scrollbar-thumb: #64748b;
+
+  /* Base color-scheme stays light dark so system preference works without JS */
+  color-scheme: light dark;
+
+  &:has(> head > meta[name="color-scheme"][content="dark"]) {
+    color-scheme: dark;
+  }
+
+  &:has(> head > meta[name="color-scheme"][content="light"]) {
+    color-scheme: light;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(:has(> head > meta[name="color-scheme"][content="light"])) {
+    --bg: var(--bg-dark);
+    --bg-soft: var(--bg-soft-dark);
+    --surface: var(--surface-dark);
+    --surface-strong: var(--surface-strong-dark);
+    --surface-card: var(--surface-card-dark);
+    --text: var(--text-dark);
+    --text-muted: var(--text-muted-dark);
+    --accent: var(--accent-dark);
+    --accent-2: var(--accent-2-dark);
+    --border: var(--border-dark);
+    --shadow: var(--shadow-dark);
+    --scrollbar-track: #040b13;
+    --scrollbar-thumb: #1c6b78;
+  }
+}
+
+:root:has(> head > meta[name="color-scheme"][content="dark"]) {
+  --bg: var(--bg-dark);
+  --bg-soft: var(--bg-soft-dark);
+  --surface: var(--surface-dark);
+  --surface-strong: var(--surface-strong-dark);
+  --surface-card: var(--surface-card-dark);
+  --text: var(--text-dark);
+  --text-muted: var(--text-muted-dark);
+  --accent: var(--accent-dark);
+  --accent-2: var(--accent-2-dark);
+  --border: var(--border-dark);
+  --shadow: var(--shadow-dark);
+  --scrollbar-track: #040b13;
+  --scrollbar-thumb: #1c6b78;
+}
+
+@supports (color: light-dark(white, black)) {
+  :root {
+    --bg: light-dark(var(--bg-light), var(--bg-dark));
+    --bg-soft: light-dark(var(--bg-soft-light), var(--bg-soft-dark));
+    --surface: light-dark(var(--surface-light), var(--surface-dark));
+    --surface-strong: light-dark(var(--surface-strong-light), var(--surface-strong-dark));
+    --surface-card: light-dark(var(--surface-card-light), var(--surface-card-dark));
+    --text: light-dark(var(--text-light), var(--text-dark));
+    --text-muted: light-dark(var(--text-muted-light), var(--text-muted-dark));
+    --accent: light-dark(var(--accent-light), var(--accent-dark));
+    --accent-2: light-dark(var(--accent-2-light), var(--accent-2-dark));
+    --border: light-dark(var(--border-light), var(--border-dark));
+    --shadow: light-dark(var(--shadow-light), var(--shadow-dark));
+    --scrollbar-track: light-dark(#e2e8f0, #040b13);
+    --scrollbar-thumb: light-dark(#64748b, #1c6b78);
+  }
+}
+
+:root {
+  accent-color: var(--accent);
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Legacy scrollbar fallback only where scrollbar-color is unsupported */
+@supports not (scrollbar-color: auto) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 99px;
+  }
+}
+
+/* Visually hidden utility (keeps content in accessibility tree) */
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Theme toggle icon visibility without JS class dependency */
+.theme-toggle-btn .icon-to-light {
+  display: none;
+}
+.theme-toggle-btn .icon-to-dark {
+  display: inline-flex;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(:has(> head > meta[name="color-scheme"][content="light"])) .theme-toggle-btn .icon-to-light {
+    display: inline-flex;
+  }
+  :root:not(:has(> head > meta[name="color-scheme"][content="light"])) .theme-toggle-btn .icon-to-dark {
+    display: none;
+  }
+}
+
+:root:has(> head > meta[name="color-scheme"][content="dark"]) .theme-toggle-btn .icon-to-light {
+  display: inline-flex;
+}
+:root:has(> head > meta[name="color-scheme"][content="dark"]) .theme-toggle-btn .icon-to-dark {
+  display: none;
+}
+:root:has(> head > meta[name="color-scheme"][content="light"]) .theme-toggle-btn .icon-to-light {
+  display: none;
+}
+:root:has(> head > meta[name="color-scheme"][content="light"]) .theme-toggle-btn .icon-to-dark {
+  display: inline-flex;
+}
+
