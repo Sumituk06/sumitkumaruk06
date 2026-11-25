@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import ScrollProgress from './components/ScrollProgress';
+import CoderBackground from './components/CoderBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
@@ -48,9 +49,7 @@ export default function App() {
 
       <ScrollProgress />
 
-      <div className="bg-grid-overlay" aria-hidden="true" />
-      <div className="bg-orb orb-one" aria-hidden="true" />
-      <div className="bg-orb orb-two" aria-hidden="true" />
+      <CoderBackground resolvedScheme={resolvedScheme} />
 
       <Navbar
         activeSection={activeSection}

@@ -5,17 +5,17 @@
 
 :root {
   /* Raw tokens */
-  --bg-light: #f1f5f9;
-  --bg-dark: #040b13;
+  --bg-light: #f8fafc;
+  --bg-dark: #020617;
   --bg-soft-light: #e2e8f0;
-  --bg-soft-dark: #0a192b;
+  --bg-soft-dark: #070d1f;
 
   --surface-light: rgba(255, 255, 255, 0.86);
-  --surface-dark: rgba(8, 22, 40, 0.72);
+  --surface-dark: rgba(7, 12, 27, 0.62);
   --surface-strong-light: #ffffff;
-  --surface-strong-dark: #0d2238;
-  --surface-card-light: rgba(255, 255, 255, 0.94);
-  --surface-card-dark: rgba(9, 27, 45, 0.56);
+  --surface-strong-dark: #0b1328;
+  --surface-card-light: rgba(255, 255, 255, 0.92);
+  --surface-card-dark: rgba(11, 19, 39, 0.58);
 
   --text-light: #0d1b2a;
   --text-dark: #eaf6ff;
